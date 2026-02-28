@@ -1,21 +1,31 @@
 body{
-    background-color: #2FB6CE;
+    background-color: #ffffff;
     font-family: 'Arial', sans-serif;
-    color: #b2427a;
+    color: #000000;
 }
-
+ 
 .navbar{
-    background-color: #FD6683 !important;
-    color: white !important;
+    background:linear-gradient(90deg, #FD6683, #B17ADA)  !important;
     font-weight: bold;
 }
 
+.logo-navbar{
+    height: 80px;
+    width: auto;
+}
+
+@media (max-width: 768px){
+    .logo-navbar{
+        height: 70px;
+    }
+}
+
 #hero{
-    background: linear-gradient(to right, #f6b4d5, #fff0f5 );
+    background: linear-gradient(135deg, #7BDBC4, #B17ADA);
 }
 
 #hero h1{
-    color: #B17ADA;
+    color: #ffffff;
     font-size: 3rem;
     font-weight: bold;
 }
@@ -33,39 +43,42 @@ body{
     border: none;
     border-radius: 15px;
     box-shadow: 0 6px 10px rgba(136, 4, 72, 0.463);
-    background-color: #f4bbdc;
+    background: linear-gradient(120deg, #9fccfa, #438bbe);
+    transition: 0.3s;
 }
 
-.btn-outline-primary{
-    border-color: #FFDF6C;
-    color: #9f2a64;
-    border-radius: 20px;
-}
-.btn-outline-primary:hover{
-    background-color: #9f2a64;
-    color: white;
-    border-color: #9f2a64;
-}
-
-#contacto form{
-    background-color: #f9e1ef;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 10px rgba(136, 4, 72, 0.463);
-}
-
-#contacto form input, #contacto form textarea{
-    border-radius: 10px;
-    border: 1px solid #e653ab;
-}
-
-#contacto form label{
-    color: #9c3c6c;
-    font-weight: bold;
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(136, 4, 72, 0.463);
 }
 
 footer{
-    background-color: #c56a97;
+    background: linear-gradient(90deg, #B17ADA, #FD6683);
+    font-size: 0.9rem;
     color: white;
     padding: 20px 0;
+}
+
+#introduccion h5{
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+}
+
+#realizar-sorteo{
+    background: linear-gradient(135deg, #ffda8f, #fa9fcc);
+}
+
+#nosotros{
+    background: linear-gradient(135deg, #935cb3, #e7a5fb);
+    color: white;
+}
+
+.btn{
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
 }
