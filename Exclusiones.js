@@ -7,13 +7,21 @@ function mostrarExclusiones() {
     bottons.style.display = 'none';
     guardarExclusionesBtn.classList.remove('d-none');
     
-    participantes.forEach(personas => {
+    participantes.forEach((personas,index) => {
         const div = document.createElement('div');
         div.classList.add('mb-3');
 
-        const titulo = document.createElement('h5');
-        titulo.textContent = personas + ' No sorteará a:';
-        div.appendChild(titulo);
+        const boton = document.createElement('button');
+        boton.classList.add('btn', 'btn-secondary', 'mb-2');
+        boton.setAttribute('data-bs-toggle', 'collapse');
+        boton.setAttribute('data-bs-target', `#exclusiones${index}`);
+        boton.textContent = personas + " ▼";
+
+        div.appendChild(boton);
+
+        const collapseDiv = document.createElement('div');
+        collapseDiv.classList.add('collapse');
+        collapseDiv.id = `exclusiones${index}`;
 
         participantes.forEach(excluido => {
             if (excluido !== personas) {
@@ -32,10 +40,11 @@ function mostrarExclusiones() {
 
                 checDiv.appendChild(checkbox);
                 checDiv.appendChild(label);
-                div.appendChild(checDiv);
+                collapseDiv.appendChild(checDiv);
             }
         });
 
+        div.appendChild(collapseDiv);
         lista.appendChild(div);
     });
 }
@@ -55,4 +64,5 @@ function guardarExclusiones() {
         }
     });
     localStorage.setItem('exclusiones', JSON.stringify(exclusiones));
+    window.location.href = 'ConfiguracionesSorteo.html';
 }
