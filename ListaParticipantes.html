@@ -7,6 +7,7 @@
      <link rel="icon" type="image/png" href="imagenes/logoCircular.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="participantes.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg sticky-top bg-light shadow navbar-dark">
@@ -25,20 +26,20 @@
             </div>
         </div>
     </nav>
-    <section class="container d-flex justify-content-center mt-5">
-            <div class="card p-4 shadow-sm" style="max-width: 400px; width:100%; border-radius:20px;">
-                <h5 class="mb-3">¿Con quién vas a sortear nombres?</h5>
-                <div id="lista-participantes">
-            </div>
 
-            <div class="d-flex align-items-center mt-3">
-                    <input type="text" id="nombre" class="form-control" placeholder="Añadir nombre">
-                    <button class="btn btn-light rounded-circle me-2" onclick="agregarParticipante()">+</button>
+    <section class="participantes-section d-flex justify-content-center mt-5">
+        <div class="card card-participantes p-4 shadow-sm">
+
+            <h5 class="mb-3 text-center fw-bold">Participantes del Intercambio</h5>
+            <div id="lista-participantes" class="lista-participantes mb-3"></div>
+            <div class="input-group mb-3">
+                <input type="text" id="nombre" class="form-control" placeholder="Añadir nombre">
+                <button class="btn btn-add" onclick="agregarParticipante()">+</button>
             </div>
-                <a href="Exclusiones.html" class="btn btn-primary mt-3">Continuar</a>
-            </div>
+            <a href="Exclusiones.html" class="btn btn-primary w-100">Continuar</a>
+        </div>
     </section>
-    <!--FOOTER-->
+
     <footer class="text-white text-center py-4">
         <div class="container">
             <p class="mb-1">© MagicSwapp 2026. Todos los derechos reservados.</p>
