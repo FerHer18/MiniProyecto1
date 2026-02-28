@@ -8,9 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg sticky-top bg-light shadow navbar-dark">
+  <body> 
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm navbar-dark">
         <div class="container">
+            <img src="imagenes/logoCircular.png" alt="" class="img-fluid logo-navbar">
             <a href="#hero" class="navbar-brand fw-bold">MagicSwapp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -26,8 +27,8 @@
         </div>
     </nav>
 
-    <section id="hero" class="hero bg-light text-center py-5">
-        <div class="containter py-5">
+    <section id="hero" class="text-center py-5 text-white">
+        <div class="container py-5">
             <div class="row align-items-center g-4 py-5">
                 <div class="col-md-6">
                     <h1 class="display-4 fw-bold mb-3">Bienvenido a MagicSwapp</h1>
@@ -46,11 +47,10 @@
             <h2 class="text-center mb-5 fw-bold">Introduccion</h2>
             <div class="row g-4">
                 <!-- Card 1: RAZÓN -->
-                <div class="col-md-4">
-                    <div class="card shadow h-100">
+                <div class=" col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-3">
                         <div class="card-body text-center">
                             <h5 class="card-title">¿Por qué MagicSwapp?</h5>
-                            <img src="rosas.jpg" class="img-fluid">
                             <p class="card-texto">MagicSwapp es una plataforma que permite realizar intercambios de regalos de forma divertida y segura. Puedes crear un sorteo, definir las reglas y participar con amigos o familiares</p>
                         </div>
                     </div>
@@ -61,7 +61,6 @@
                     <div class="card shadow h-100">
                         <div class="card-body text-center">
                             <h5 class="card-title">¿Cómo funciona MagicSwapp?</h5>
-                            <img src="gerberas.jpg" class="img-fluid">
                             <p class="card-texto">
                                 En primer lugar, presiona desplazate a la seccion de "Realizar Intercambio". 
                                 <br>Después, ingresa el nombre del organizador
@@ -70,7 +69,6 @@
                                 <br>Casi para finalizar podrás elegir el tipo de sorteo que deseas realizar y el costo
                                 <br>Finalmente, podrás ver los resultados del sorteo.
                             </p>
-                            <a href="#Nosotros" class="btn btn-outline-primary rounded-pill">Ver más</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +78,6 @@
                     <div class="card shadow h-100">
                         <div class="card-body text-center">
                             <h5 class="card-title">Testimonios</h5>
-                            <img src="tulipanes.jpg" class="img-fluid">
                             <p class="card-texto">Rosy. "MagicSwapp me ayudó a organizar un intercambio de regalos para mi familia. ¡Fue increíble!"</p>
                             <p class="card-texto">Carlos. "La plataforma es fácil de usar y el sorteo fue justo. ¡Recomendada!"</p>
                             <p class="card-texto">Ana. "Me encantó la variedad de opciones para personalizar el sorteo. ¡Hizo que mi evento fuera especial!"</p>
@@ -93,27 +90,32 @@
 
     <section id="realizar-sorteo" class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center fw-bold mb-4">Realizar Sorteo</h2>
 
-            <div-row class="row align-items-center g-4">
+            <div class="row align-items-center g-4">
 
             <!-- ESPACIO DONDE SE ENCUENTRA EL BOTON PARA REALIZAR EL SORTEO -->
-            <div class="col-md-6">
-                <div class="p-4">
-                    <h4 class="fw-bold mb-3">Presiona el Botón para Realizar el Sorteo</h4>
-                    <a href="Organizador.html" class="btn btn-primary">Continuar</a>
-                 </div>
-            </div-row>
+           <div class="row justify-content-center text-center">
+                <div class="col-md-6">
+                    <div class="p-5 bg-white rounded-4 shadow">
+                        <h4 class="fw-bold mb-3">Presiona el botón para realizar el sorteo</h4>
+                        <a href="Organizador.html" class="btn btn-primary btn-lg px-4">Continuar</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- NOSOTROS -->
     <section id="Nosotros" class="py-5">
-        <div class="col-md-6">
-            <div class="p-4">
-                <h4 class="fw-bold mb-3">¿Quiénes somos?</h4>
-                <p class="mb-3">Somos Valeria Bernal Salcedo y Fernando Gabriel Hernández Junco estudiantes de la UAA apasionados por la tecnología y la creatividad. Nuestro objetivo es crear soluciones innovadoras que faciliten la vida de las personas y fomenten la conexión entre ellas.</p>
-                <p class="mb-3">En MagicSwapp, creemos que los pequeños gestos pueden generar grandes sonrisas. Por eso, nos esforzamos por ofrecer una plataforma fácil de usar y divertida para que todos puedan disfrutar de la magia de los intercambios de regalos.</p>    
+        <div  class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div id="nosotros" class="p-4 bg-white rounded-4 shadow">
+                        <h4 class="fw-bold mb-3">¿Quiénes somos?</h4>
+                        <p>Somos Valeria Bernal Salcedo y Fernando Gabriel Hernández Junco estudiantes de la UAA apasionados por la tecnología y la creatividad.</p>
+                        <p>En MagicSwapp, creemos que los pequeños gestos pueden generar grandes sonrisas.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

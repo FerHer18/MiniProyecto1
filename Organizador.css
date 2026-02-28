@@ -1,0 +1,86 @@
+.organizador-section{
+    min-height: 80vh;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.card-organizador{
+    background: linear-gradient(135deg, #f9c5e0, #e764a6);
+    color: white;
+    border-radius: 25px;
+    border: none;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-organizador:hover{
+    transform: translateY(-5px);
+}
+
+.card-organizador input{
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #e653ab;
+    transition: 0.25s;
+}
+
+.card-organizador input:focus{
+    border-color: #B17ADA;
+    box-shadow: 0 0 0 0.2rem rgba(177,122,218,0.25);
+}
+
+.card-organizador .btn-primary{
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #e764a6;
+    border: none;
+}
+
+.card-organizador .btn-primary:hover{
+    background-color: #FFDF6C;
+    color: #9f2a64;
+}
+
+#participarBox{
+    margin-top: 20px;
+    padding: 15px;
+    background: #ffc8e6;
+    border-radius: 15px;
+    border: 1px solid #f4bbdc;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#participarBox p{
+    margin-bottom: 10px;
+    color: #9f2a64;
+}
+
+/* Botones Sí / No */
+#participarBox .btn{
+    border-radius: 25px;
+    padding: 6px 20px;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+#participarBox .btn-outline-primary{
+    border-color: #B17ADA;
+    color: #B17ADA;
+}
+
+#participarBox .btn-outline-primary:hover{
+    background-color: #B17ADA;
+    color: white;
+}
+
+#participarBox .btn-outline-secondary{
+    border-color: #FD6683;
+    color: #FD6683;
+}
+
+#participarBox .btn-outline-secondary:hover{
+    background-color: #FD6683;
+    color: white;
+}
+
