@@ -1,0 +1,71 @@
+body{
+    background-color: #2FB6CE;
+    font-family: 'Arial', sans-serif;
+    color: #b2427a;
+}
+
+.navbar{
+    background-color: #FD6683 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+#hero{
+    background: linear-gradient(to right, #f6b4d5, #fff0f5 );
+}
+
+#hero h1{
+    color: #B17ADA;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.btn-primary{
+    background-color: #e764a6;
+    border: none;
+    border-radius: 20px;
+}
+.btn-primary:hover{
+    background-color: #FFDF6C;
+} 
+
+.card{
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(136, 4, 72, 0.463);
+    background-color: #f4bbdc;
+}
+
+.btn-outline-primary{
+    border-color: #FFDF6C;
+    color: #9f2a64;
+    border-radius: 20px;
+}
+.btn-outline-primary:hover{
+    background-color: #9f2a64;
+    color: white;
+    border-color: #9f2a64;
+}
+
+#contacto form{
+    background-color: #f9e1ef;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(136, 4, 72, 0.463);
+}
+
+#contacto form input, #contacto form textarea{
+    border-radius: 10px;
+    border: 1px solid #e653ab;
+}
+
+#contacto form label{
+    color: #9c3c6c;
+    font-weight: bold;
+}
+
+footer{
+    background-color: #c56a97;
+    color: white;
+    padding: 20px 0;
+}
