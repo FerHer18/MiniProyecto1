@@ -1,16 +1,23 @@
-function agregarParticipante() {
-    const nombreInput = document.getElementById('nombre');
-    const nombre = nombreInput.value.trim();
+function agregarParticipante(){
+    let nombreInput = document.getElementById("nombre");
+    let nombre = nombreInput.value.trim();
 
-    if (!nombre) return;
-    const lista = document.getElementById('lista-participantes');
+    if(nombre === "") return;
+    let lista = document.getElementById("lista-participantes");
+    let item = document.createElement("div");
+    item.classList.add("participante-item");
 
-    const div = document.createElement('div');
-    div.classList.add('participante-item');
+    item.innerHTML = `
+        <input type="text" value="${nombre}" class="participante-nombre">
+        <button class="btn-eliminar" onclick="this.parentElement.remove()">×</button>
+    `;
+    lista.appendChild(item);
+    nombreInput.value = "";
+}
 
-    div.innerHTML = `<span>${nombre}</span><button class="btn-eliminar" onclick="this.parentElement.remove()">×</button>`;
-
-    lista.appendChild(div);
+function establecerExclusiones() {
+    const exclusiones = document.getElementById('exclusiones').value.trim();
+    localStorage.setItem('exclusiones', exclusiones);
 
     let participantes = JSON.parse(localStorage.getItem('participantes')) || [];
     participantes.push(nombre);
