@@ -1,0 +1,89 @@
+.configuraciones-section{
+    background-color: #c5fbe8;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center; 
+}
+
+.config-card{
+    max-width: 600px;
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    background: white;
+}
+
+.config-card label{
+    color: #238a75;
+}
+
+.opcion{
+    border-radius: 25px;
+    padding: 8px 16px;
+    border: 2px solid #b4f6ea;
+    background: white;
+    color: #2a9f8e;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.opcion:hover{
+    background: #b4f6ea;
+    border: none;
+}
+
+.opcion.active{
+    background-color: #1f7967;
+    color: white;
+    border: none;
+}
+
+
+#configuracionFecha,
+#configuracionPrecio{
+    background: #fff6fb;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+input.form-control{
+    border-radius: 12px;
+    border: 1px solid #88d5c7;
+}
+
+.btn-secondary{
+    background: #a7e9d5;
+    border: none;
+    border-radius: 20px;
+}
+
+.btn-secondary:hover{
+    background: #63c597;
+    color: white;
+}
+
+#continuarBtn{
+    border-radius: 25px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #1f7967;
+    border: none;
+}
+
+#continuarBtn:disabled{
+    opacity: 0.5;
+}
+
+#eventoPersonalizado{
+    border-radius: 15px;
+    border: 2px dashed #b4f6ea;
+    padding: 10px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+#eventoPersonalizado:focus{
+    border: 2px solid #7adac4;
+    box-shadow: 0 0 8px rgba(177,122,218,0.3);
+}

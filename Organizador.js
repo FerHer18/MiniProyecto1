@@ -11,8 +11,8 @@ function mostrarPregunta(){
 
 function setParticipacion(valor){
     if(valor){
-        alert("El organizador participará en el intercambio");
+        Swal.fire("El organizador participará en el intercambio");
     }else{
-        alert("El organizador no participará en el intercambio");
+        Swal.fire("El organizador no participará en el intercambio");
     }
 }

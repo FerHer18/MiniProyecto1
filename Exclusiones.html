@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Exclusiones.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg sticky-top bg-light shadow navbar-dark">
+    <nav class="navbar navbar-expand-lg sticky-top shadow navbar-dark">
         <div class="container">
             <a href="#hero" class="navbar-brand fw-bold">MagicSwapp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -18,26 +18,31 @@
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="#hero" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="#introduccion" class="nav-link">Introduccion</a></li>
-                    <li class="nav-item"><a href="#realizar" class="nav-link">Realizar Intercambio</a></li>
-                    <li class="nav-item"><a href="#Nosotros" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item"><a href="Inicio.html" class="nav-link">Inicio</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div id="bottons" class="mb-3">
-        <button class="btn btn-primary" onclick="mostrarExclusiones()">Si deseo agregar exclusiones!!</button>
-        <a href="ConfiguracionesSorteo.html" class ="btn btn-secondary">No deseo agregar exclusiones!!</a>
-    </div>
+    <section id="exclusiones" class="exclusiones-section d-flex">
+        <div class="container p-4">
+            <h2 class="text-center mb-4 fw-bold">Exclusiones</h2>
+            <p class="text-center mb-4">Aquí puedes agregar exclusiones para tu sorteo. Esto significa que ciertos participantes no podrán ser asignados a ciertos otros participantes. Por ejemplo, si tienes un sorteo de intercambio de regalos entre amigos, puedes querer asegurarte de que ciertas personas no se asignen entre sí.</p>
+            <h2 class="text-center fw-bold">¿Deseas agregar exclusiones?</h2>
+            <div id="bottons" class="mb-3 text-center">
+                <button class="btn btn-primary fw-bold" onclick="mostrarExclusiones()">Si</button>
+                <a href="ConfiguracionesSorteo.html" class ="btn btn-secondary fw-bold">No</a>
+            </div>
+            <div id="exclusionesContainer" class="d-none">
+                <h4 class="mb-3 fw-bold">Agrega tus exclusiones</h4>
+                <div id="exclusionesList" class="mb-3"></div>
+                <button class="btn btn-success fw-bold" onclick="agregarExclusion()">Agregar Exclusión</button>
+                <button id="guardarExclusionesBtn" class="btn btn-success mt-3 fw-bold text-center" onclick="guardarExclusiones()">Guardar Exclusiones</button>
+            </div>
+        </div>     
+    </section>
 
-    <div id = "listaParticipantes" class="mt-4"></div>
-
-    <button id="guardarExclusionesBtn" class="btn btn-success mt-3" onclick="guardarExclusiones()">Guardar Exclusiones</button>
-
-    <!--FOOTER-->
-    <footer class="text-white text-center py-4">
+    <footer class="text-white text-center py-3 sticky-bottom">
         <div class="container">
             <p class="mb-1">© MagicSwapp 2026. Todos los derechos reservados.</p>
             <p class="mb-1">Valeria Bernal Salcedo y Fernando Gabriel Hernández Junco</p>
