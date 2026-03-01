@@ -3,6 +3,7 @@ function mostrarExclusiones() {
     const lista = document.getElementById('listaParticipantes');
     const guardarExclusionesBtn = document.getElementById('guardarExclusionesBtn');
     const bottons = document.getElementById('bottons');
+    document.getElementById("exclusionesContainer").classList.remove("d-none");
 
     bottons.style.display = 'none';
     guardarExclusionesBtn.classList.remove('d-none');
@@ -52,7 +53,8 @@ function mostrarExclusiones() {
 
 function guardarExclusiones() {
     const participantes = JSON.parse(localStorage.getItem('participantes')) || [];
-    let exclusiones = {};
+    
+    let exclusiones = JSON.parse(localStorage.getItem('exclusiones')) || {};
     
     participantes.forEach(persona => {
         const checkboxes = document.querySelectorAll(`input[name="${persona}"]:checked`);
