@@ -5,7 +5,7 @@ body{
 }
  
 .navbar{
-    background:linear-gradient(90deg, #FD6683, #B17ADA)  !important;
+    background-color: #e764a6;
     font-weight: bold;
 }
 
@@ -14,14 +14,9 @@ body{
     width: auto;
 }
 
-@media (max-width: 768px){
-    .logo-navbar{
-        height: 70px;
-    }
-}
 
 #hero{
-    background: linear-gradient(135deg, #7BDBC4, #B17ADA);
+    background: linear-gradient(135deg, #db7bae, #B17ADA);
 }
 
 #hero h1{
@@ -43,7 +38,7 @@ body{
     border: none;
     border-radius: 15px;
     box-shadow: 0 6px 10px rgba(136, 4, 72, 0.463);
-    background: linear-gradient(120deg, #9fccfa, #438bbe);
+    background-color: #d692dd;
     transition: 0.3s;
 }
 
@@ -53,7 +48,7 @@ body{
 }
 
 footer{
-    background: linear-gradient(90deg, #B17ADA, #FD6683);
+    background-color: #e764a6;
     font-size: 0.9rem;
     color: white;
     padding: 20px 0;
@@ -67,11 +62,11 @@ footer{
 }
 
 #realizar-sorteo{
-    background: linear-gradient(135deg, #ffda8f, #fa9fcc);
+    background-color: #ffda8f !important;
 }
 
 #nosotros{
-    background: linear-gradient(135deg, #935cb3, #e7a5fb);
+    background-color: #7bc3db !important;
     color: white;
 }
 

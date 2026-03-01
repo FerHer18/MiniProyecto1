@@ -9,29 +9,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const fechasSugeridas = document.getElementById("fechasSugeridas");
     const buttons = document.querySelectorAll(".opcion");
 
+    const mostrarMasBtn = [...buttons].find(b => b.textContent.trim() === "Mostrar más");
+    const masOpciones = document.getElementById("masOpciones");
+    const eventoPersonalizado = document.getElementById("eventoPersonalizado");
+
+    masOpciones.classList.add("d-none");
+    eventoPersonalizado.value = "";
+
+    mostrarMasBtn.addEventListener("click", function(){
+        masOpciones.classList.toggle("d-none");
+        document.querySelectorAll(".opcion").forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        localStorage.removeItem("evento");
+        validar();
+    });
+
+    eventoPersonalizado.addEventListener("input", function(){
+        if(this.value.trim() !== ""){
+            localStorage.setItem("evento", this.value.trim());
+        } else {
+            localStorage.removeItem("evento");
+        }
+        validar();
+    });
+
     const hoy = new Date();
     const fechaHoy = hoy.toISOString().split("T")[0];
 
     fechaInput.min = fechaHoy;
 
-    //FUNCIONES
 
 
     //FUNCION PARA ELEGIR EL TIPO DE EVENTO 
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-
-            buttons.forEach(b => {
-                b.classList.remove("btn-primary");
-                b.classList.add("btn-outline-primary");
-            });
-
-            this.classList.remove("btn-outline-primary");
-            this.classList.add("btn-primary");
-
-            const evento = this.textContent.trim();
-            localStorage.setItem("evento", evento);
-
+    document.querySelectorAll(".opcion").forEach(btn => {
+        btn.addEventListener("click", function(){
+            document.querySelectorAll(".opcion").forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            localStorage.setItem("evento", this.textContent.trim());
             validar();
         });
     });
@@ -39,14 +53,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const eventoGuardado = localStorage.getItem("evento");
 
     if (eventoGuardado) {
+        let coincideConBoton = false;
         buttons.forEach(button => {
-            if (button.textContent.trim() === eventoGuardado) {
-                button.classList.remove("btn-outline-primary");
-                button.classList.add("btn-primary");
+            if (button.textContent.trim() === eventoGuardado){
+                button.classList.add("active");
+                coincideConBoton = true;
             }
         });
-    }
 
+        // Si no coincide con ningún botón es personalizado
+        if (!coincideConBoton){
+            masOpciones.classList.remove("d-none");
+            mostrarMasBtn.classList.add("active");
+            eventoPersonalizado.value = eventoGuardado;
+        }
+    }
 
     // FUNCION PARA SUGERIR LAS FECHAS
     const sugerencias = [3, 7, 14];

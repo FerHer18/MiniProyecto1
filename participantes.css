@@ -1,6 +1,7 @@
 .participantes-section{
-    min-height: 80vh;
+    min-height: 85vh;
     align-items: center;
+    background-color: #f9f2b3;
 }
 
 .card-participantes{
@@ -8,7 +9,7 @@
     width: 100%;
     border-radius: 25px;
     border: none;
-    background: linear-gradient(135deg, #f9c5e0, #e764a6);
+    background-color: #efec5c;
 }
 
 .lista-participantes{
@@ -28,7 +29,7 @@
 }
 
 .participante-item:hover{
-    background: #ffeaf5;
+    background: #ffffea;
 }
 
 .participante-nombre{
@@ -57,6 +58,17 @@
 }
 
 .btn-add:hover{
-    background: #B17ADA;
-    color: white;
+    background: #dbe773;
+    color: black;
 }
+
+.btn-primary{
+    background-color: #fcffad;
+    border: none;
+    color: black;
+    border-radius: 20px;
+}
+.btn-primary:hover{
+    background-color: #f1f485;
+    color: black;
+} 
