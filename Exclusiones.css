@@ -15,9 +15,14 @@
 } 
 
 .btn-secondary{
+    background-color:#7c4291;
     border: none;
     border-radius: 15px;
 } 
+
+.btn-secondary:hover{
+    background-color:#FD6683;
+}
 
 h2{
     color: #7c4291;
@@ -55,6 +60,7 @@ h2{
 }
 
 .exclusion-nombre{
+    background-color: #7c4291;
     border: none;
     background: transparent;
     width: 100%;
@@ -71,4 +77,25 @@ h2{
 
 .btn-eliminar:hover{
     color: #FD6683;
+}
+
+#exclusionesContainer{
+    text-align: center;
+}
+
+#listaParticipantes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#guardarExclusionesBtn{
+    background-color: #b260cf;   /* morado */
+    border: none;
+    border-radius: 15px;
+    color: white;
+}
+
+#guardarExclusionesBtn:hover{
+    background-color: #d885f4;
 }
