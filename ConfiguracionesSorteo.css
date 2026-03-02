@@ -28,7 +28,7 @@
 }
 
 .opcion:hover{
-    background: #b4f6ea;
+    background: #9cefe0;
     border: none;
 }
 
@@ -38,10 +38,10 @@
     border: none;
 }
 
-
+#configuracionEvento,
 #configuracionFecha,
 #configuracionPrecio{
-    background: #fff6fb;
+    background: #edfbf7;
     padding: 15px;
     border-radius: 15px;
     margin-top: 20px;
@@ -86,4 +86,39 @@ input.form-control{
 #eventoPersonalizado:focus{
     border: 2px solid #7adac4;
     box-shadow: 0 0 8px rgba(177,122,218,0.3);
+}
+
+.opcion-fecha{
+    border-radius: 25px;
+    padding: 6px 14px;
+    border: 2px solid #b4f6ea;
+    background: white;
+    color: #2a9f8e;
+    transition: 0.2s;
+}
+
+.opcion-fecha.active{
+    background-color: #1f7967;
+    color: white;
+    border: none;
+}
+
+.opcion-precio{
+    border-radius: 25px;
+    padding: 6px 14px;
+    border: 2px solid #b4f6ea;
+    background: white;
+    color: #2a9f8e;
+    transition: 0.2s;
+}
+
+.opcion-precio.active{
+    background-color: #1f7967;
+    color: white;
+    border: none;
+}
+
+.opcion-fecha:hover,
+.opcion-precio:hover{
+    background-color: #9cefe0;
 }
