@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="ConfiguracionesSorteo.css">
   </head>
-  <body>
+  <body> 
     <nav class="navbar navbar-expand-lg sticky-top shadow navbar-dark">
         <div class="container">
             <a href="#hero" class="navbar-brand fw-bold">MagicSwapp</a>
@@ -25,65 +25,74 @@
     </nav>
     <section class="configuraciones-section d-flex align-items-center p-4">
         <div class="container p-4 config-card shadow">
-            <label class="form-label fw-bold">¿Para qué vas a sortear nombres?</label>
+            <div class="mt-4" id="configuracionEvento">
+                    <label class="form-label fw-bold">¿Para qué vas a sortear nombres?</label>
+                    <div class="d-flex flex-wrap gap-2 mt-3" id="opcionesSorteo">
+                        <button type="button" class="btn opcion">
+                            Día de San Valentín
+                        </button>
 
-                <div class="d-flex flex-wrap gap-2 mt-3" id="opcionesSorteo">
-                    <button type="button" class="btn opcion">
-                        Día de San Valentín
-                    </button>
+                        <button type="button" class="btn opcion">
+                            Intercambio
+                        </button>
 
-                    <button type="button" class="btn opcion">
-                        Intercambio
-                    </button>
+                        <button type="button" class="btn opcion">
+                            Navidad
+                        </button>
 
-                    <button type="button" class="btn opcion">
-                        Navidad
-                    </button>
+                        <button type="button" class="btn opcion">
+                            Día del Niño
+                        </button>
 
-                    <button type="button" class="btn opcion">
-                        Día del Niño
-                    </button>
+                        <button type="button" class="btn opcion">
+                            Día de la Madre
+                        </button>
 
-                    <button type="button" class="btn opcion">
-                        Día de la Madre
-                    </button>
+                        <button type="button" class="btn opcion">
+                            Mostrar más
+                        </button>
+                    </div>
 
-                    <button type="button" class="btn opcion">
-                        Mostrar más
-                    </button>
-                </div>
-
-                <div id="masOpciones" class="d-none-mt-3">
-                    <input type="text" class="form-control" id="eventoPersonalizado" placeholder="Nombre de la celebración">
+                    <div id="masOpciones" class="mt-3 d-none">
+                        <input type="text" class="form-control" id="eventoPersonalizado" placeholder="Nombre de la celebración">
+                    </div>
                 </div>
                 
                 <!-- CONFIGURACION DE FECHA -->
                 <div class="mt-4" id="configuracionFecha">
-                    <label for="fechaSorteo" class="form-label">Selecciona la fecha del sorteo:</label>
-                    <input type="date" class="form-control" id="fechaSorteo" name="fechaSorteo">
-                    
-                    <!--ESTABLECIMIENTO DE SUGERENCIA DE FECHAS-->
-                    <div class="mt-3">
-                        <label class="form-label">Sugerencias de fechas:</label>
-                        <div id="fechasSugeridas" class="d-flex flex-wrap gap-2">
+                    <label class="form-label mt-3 fw-bold">¿Cuándo será el intercambio?</label>
 
+                    <div class="d-flex flex-wrap gap-2 mt-2" id="opcionesFecha">
+                        <div id="fechasSugeridas" class="d-flex flex-wrap gap-2"></div>
+                        <button type="button" class="btn opcion-fecha">Otro</button>
                     </div>
 
-                <div class="form-text">La fecha del sorteo no puede ser anterior a hoy.</div>
-                <button type="button" class="btn btn-secondary mt-2" id="fechaHoyBtn">Establecer fecha</button>
-            </div>
+                    <div id="fechaPersonalizada" class="mt-3 d-none">
+                        <input type="date" class="form-control" id="fechaSorteo">
+                    </div>
 
-            <!-- CONFIGURACION DE PRECIO-->
-            <div class="mt-4" id="configuracionPrecio">
-                <label for="precioMaximo" class="form-label">¿Deseas establecer un precio máximo para los regalos?</label>
-                <input type="number" class="form-control" id="precioMaximo" name="precioMaximo" placeholder="Ingresa el precio máximo">
-                <button type="button" class="btn btn-secondary mt-2" id="precioMaximoBtn">Establecer precio</button>
-                <div class="form-text">Si no deseas establecer un precio máximo, deja este campo en blanco</div>
-            </div>
+                    <div class="form-text">La fecha del sorteo no puede ser anterior a hoy.</div>
+                    <button type="button" class="btn btn-secondary mt-2" id="fechaHoyBtn">Establecer fecha</button>
+                </div>
 
-            <div class="container mt-4">
-                <button type="button" class="btn btn-primary" id="continuarBtn" disabled>Finalizar</button>
-            </div>
+                <!-- CONFIGURACION DE PRECIO-->
+                <div class="mt-4" id="configuracionPrecio">
+                    <label class="form-label fw-bold">¿Precio del regalo?</label>
+
+                    <div class="d-flex flex-wrap gap-2 mt-2" id="preciosSugeridos"></div>
+
+                    <button type="button" class="btn opcion-precio mt-1" id="otroPrecio">Otro</button>
+
+                    <div id="precioPersonalizado" class="mt-3 d-none">
+                        <input type="number" class="form-control" id="precioMaximo" placeholder="Ingresa el precio máximo">
+                    </div>
+
+                    <div class="form-text">Si no deseas establecer un precio máximo, deja este campo en blanco</div>
+                    <button type="button" class="btn btn-secondary mt-2">Establecer precio</button>
+                </div>
+                <div class="mt-4 text-center">
+                    <button type="button" class="btn btn-primary px-4" id="continuarBtn" disabled>Finalizar</button>
+                </div>
         </div>
     </section>
 

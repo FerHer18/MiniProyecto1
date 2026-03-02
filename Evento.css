@@ -1,0 +1,46 @@
+.evento-section{
+    background-color: #fbc5ec;
+    min-height: 90vh;
+}
+
+.evento-card{
+    max-width: 700px;
+    margin: auto;
+    border-radius: 25px;
+    background: rgb(246, 138, 192);
+}
+
+.opcion-evento{
+    border-radius: 25px;
+    padding: 8px 20px;
+    border: 2px solid #9f2a70;
+    background: white;
+    color: #9f2a70;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.opcion-evento:hover{
+    background: #cc3d93;
+    border: none;
+    color: white;
+}
+
+.opcion-evento.active{
+    background-color: #cc3d93;
+    color: white;
+    border: none;
+}
+
+.participante-card{
+    border-radius: 20px;
+    border: 2px solid #9f2a70;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #9f2a70;
+    color: white;
+}
+
+.participante-card:hover{
+    background: #eb85d1;
+}
