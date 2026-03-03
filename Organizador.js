@@ -32,6 +32,21 @@ function continuar(){
         Swal.fire("Debes elegir si el organizador participará");
         return;
     }
+    
+    //TENEMOS NUEVAMENTE LA LISTA
+    let participantes = JSON.parse(localStorage.getItem("participantes")) || [];
+
+    //EN CASO DE SI VAYA A PARTICIPAR, EL CAMPO SE COLOCA EN TRUE Y SI NO ESTÁ EN LA LISTA, LO AGREGAMOS
+    if(participa === "true"){
+        if(!participantes.includes(nombre)){
+            participantes.push(nombre);
+        }
+    }else{
+        //EN CASO DE QUE NO PARTICIPE Y ESTABA ANTES, SE ELIMINA
+        participantes = participantes.filter(p => p !== nombre);
+    }
+
+    localStorage.setItem("participantes", JSON.stringify(participantes));
 
     window.location.href = "ListaParticipantes.html";
 }
