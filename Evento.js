@@ -16,7 +16,7 @@ verConfigBtn.addEventListener("click", () => {
 finalizarBtn.addEventListener("click", () => {
     localStorage.clear();
     window.location.href = "Inicio.html";
-} )
+} ) 
 
 
 function mostrarConfiguracion(){
@@ -51,34 +51,76 @@ verSorteoBtn.addEventListener("click", () => {
 
 function mostrarSorteo(){
     const resultados = JSON.parse(localStorage.getItem("resultados")) || [];
-    sorteoDiv.innerHTML = resultados.map(r => `
-        <div class="card participante-card m-2 p-3 text-center">
-            <div class="front">
-                ${r.de}
-            </div>
-            <div class="back d-none">
-                Da a: ${r.para}
+    sorteoDiv.innerHTML = `
+        <div class="row">
+            <div class="col-6" id="listaDrag"></div>
+            <div class="col-6">
+                <div id="zonaRevelado" class="drop-area">
+                    Arrastra aquí para conocer quien te toco en el sorteo
+                </div>
+                <div id="resultadoMostrado" class="mt-3"></div>
             </div>
         </div>
-    `).join("");
+    `;
 
-    activarVolteo();
-}
-
-function activarVolteo(){
-    document.querySelectorAll(".participante-card")
-    .forEach(card => {
-
-        card.addEventListener("click", function(){
-            const front = this.querySelector(".front");
-            const back = this.querySelector(".back");
-            front.classList.add("d-none");
-            back.classList.remove("d-none");
-            setTimeout(() => {
-                front.classList.remove("d-none");
-                back.classList.add("d-none");
-            }, 2000);
-          });
+    const lista = document.getElementById("listaDrag");
+    resultados.forEach(r => {
+        lista.innerHTML += `
+            <div class="participante-card m-2 p-3 text-center"
+                 draggable="true"
+                 data-nombre="${r.de}">
+                 ${r.de}
+            </div>
+        `;
     });
 
+    activarDragAndDrop(resultados);
+}
+
+function activarDragAndDrop(resultados){
+    const zonaRevelado = document.getElementById("zonaRevelado");
+    const lista = document.getElementById("listaDrag");
+    document.querySelectorAll(".participante-card")
+    .forEach(card => {
+        card.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", card.dataset.nombre);
+        });
+    });
+
+    zonaRevelado.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        zonaRevelado.classList.add("activa");
+    });
+
+    zonaRevelado.addEventListener("dragleave", () => {
+        zonaRevelado.classList.remove("activa");
+    });
+
+    zonaRevelado.addEventListener("drop", (e) => {
+        e.preventDefault();
+        zonaRevelado.classList.remove("activa");
+        const nombre = e.dataTransfer.getData("text/plain");
+        const persona = resultados.find(r => r.de === nombre);
+
+        const cardOriginal = document.querySelector(`[data-nombre="${nombre}"]`);
+
+        // mover la card
+        zonaRevelado.appendChild(cardOriginal);
+
+        // mostrar resultado dentro de la zona
+        const resultadoDiv = document.createElement("div");
+        resultadoDiv.classList.add("mt-3", "alert", "info");
+        resultadoDiv.innerHTML = `
+            <strong>${persona.de}</strong> le regala a 
+            <strong>${persona.para}</strong> 
+        `;
+
+        zonaRevelado.appendChild(resultadoDiv);
+
+        // después de 3 segundos regresar todo
+        setTimeout(() => {
+            lista.appendChild(cardOriginal);
+            resultadoDiv.remove();
+        }, 3000);
+    });
 }
