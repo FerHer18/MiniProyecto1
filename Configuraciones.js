@@ -227,7 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function sortear(participantes, exclusiones){
     let intento = 0;
-    let maxIntentos = 1000;
+    let maxIntentos = 1000; // Intentar generar un sorteo máximo 1000 veces
+    // POrque por las exclusiones algunas combinaciones podrían ser invalidas
     while(intento < maxIntentos){
         let copia = [...participantes];
         for(let i=copia.length-1; i>0; i--){
