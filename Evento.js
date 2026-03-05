@@ -14,7 +14,7 @@ verConfigBtn.addEventListener("click", () => {
  
 finalizarBtn.addEventListener("click", () => {
     localStorage.clear();
-    window.location.href = "Inicio.html";
+    window.location.href = "index.html";
 } ) 
 
 function mostrarConfiguracion(){
