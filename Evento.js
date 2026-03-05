@@ -6,27 +6,30 @@ const configDiv = document.getElementById("configuracionEvento");
 const sorteoDiv = document.getElementById("sorteoEvento");
 
 verConfigBtn.addEventListener("click", () => {
-
-    configDiv.classList.toggle("d-none");
+    configDiv.classList.toggle("d-none"); // Toggle para agregar o quitar una clase
     sorteoDiv.classList.add("d-none");
 
     mostrarConfiguracion();
 });
-
+ 
 finalizarBtn.addEventListener("click", () => {
     localStorage.clear();
     window.location.href = "Inicio.html";
 } ) 
 
-
 function mostrarConfiguracion(){
+    // Obtener los datos del localStorage que habian sido guardados
     const organizador = localStorage.getItem("organizador");
     const evento = localStorage.getItem("evento");
     const fecha = localStorage.getItem("fechaSorteo");
     const precio = localStorage.getItem("precioMaximo");
+
+    // Se convierte a objeto de javascript ya que fue guardado como texto
     const participantes = JSON.parse(localStorage.getItem("participantes")) || [];
+    // Se obtienen las exclusiones que se guardaron tipo "Fer" : ["Vale"] (fer no el puede regalar a Vale)
     const exclusiones = JSON.parse(localStorage.getItem("exclusiones")) || {};
 
+    // Se muestran  los datos del sorteo
     configDiv.innerHTML = `
         <h5>Organizador:</h5> ${organizador || "No definido"} <br><br>
         <h5>Celebración:</h5> ${evento} <br><br>
@@ -41,6 +44,7 @@ function mostrarConfiguracion(){
             ${Object.keys(exclusiones).length ? Object.entries(exclusiones).map(([de, lista]) => lista.map(para => `<li>${de} X ${para}</li>`).join("")).join(""): "<li>Ninguna</li>"}
         </ul>
     `;
+    // Las exlusiones se convierten en HTML sacando los objetos del map para que quede asi: Fer X Vale
 }
 
 verSorteoBtn.addEventListener("click", () => {
@@ -49,6 +53,8 @@ verSorteoBtn.addEventListener("click", () => {
     mostrarSorteo();
 });
 
+// Se crea la estructura para ver el sorteo con una area donde iran todos los nombres 
+// y otra donde se veran los resultados
 function mostrarSorteo(){
     const resultados = JSON.parse(localStorage.getItem("resultados")) || [];
     sorteoDiv.innerHTML = `
