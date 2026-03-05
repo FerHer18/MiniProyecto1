@@ -70,6 +70,7 @@ function mostrarSorteo(){
     `;
 
     const lista = document.getElementById("listaDrag");
+    // Se crean las tarjetas arrastables con draggable=true
     resultados.forEach(r => {
         lista.innerHTML += `
             <div class="participante-card m-2 p-3 text-center"
@@ -88,11 +89,14 @@ function activarDragAndDrop(resultados){
     const lista = document.getElementById("listaDrag");
     document.querySelectorAll(".participante-card")
     .forEach(card => {
+        // Se activa el dragstart cuando el usuario toma un nombre 
+        // y se guarda la informacion en dataTransfer
         card.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", card.dataset.nombre);
         });
     });
 
+    // Esto nos permite soltar
     zonaRevelado.addEventListener("dragover", (e) => {
         e.preventDefault();
         zonaRevelado.classList.add("activa");
@@ -102,15 +106,16 @@ function activarDragAndDrop(resultados){
         zonaRevelado.classList.remove("activa");
     });
 
+    // CUando lo sueltas muestras la informacion
     zonaRevelado.addEventListener("drop", (e) => {
         e.preventDefault();
         zonaRevelado.classList.remove("activa");
-        const nombre = e.dataTransfer.getData("text/plain");
-        const persona = resultados.find(r => r.de === nombre);
+        const nombre = e.dataTransfer.getData("text/plain"); // Recuperar el nombre arrastrado
+        const persona = resultados.find(r => r.de === nombre); // Encontrar a quien le regala
 
         const cardOriginal = document.querySelector(`[data-nombre="${nombre}"]`);
 
-        // mover la card
+        // mover la tarjeta a la zona de revelado
         zonaRevelado.appendChild(cardOriginal);
 
         // mostrar resultado dentro de la zona
@@ -127,6 +132,6 @@ function activarDragAndDrop(resultados){
         setTimeout(() => {
             lista.appendChild(cardOriginal);
             resultadoDiv.remove();
-        }, 3000);
+        }, 3000); // Despues de 3 segundos se borra
     });
 }

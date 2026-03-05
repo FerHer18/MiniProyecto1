@@ -219,8 +219,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Si se pudo sortear exitosamente guarda los resultados en el localstorage
         localStorage.setItem("resultados", JSON.stringify(resultados));
-        window.location.href = "Evento.html";
+        window.location.href = "Evento.html"; // Redirige a la pantalla final
     });
 
 });
@@ -231,30 +232,36 @@ function sortear(participantes, exclusiones){
     // POrque por las exclusiones algunas combinaciones podrían ser invalidas
     while(intento < maxIntentos){
         let copia = [...participantes];
+        // Se usa el algortimo Fisher-Yates para mezclar a los participantes
         for(let i=copia.length-1; i>0; i--){
             const j = Math.floor(Math.random()*(i+1));
             [copia[i], copia[j]] = [copia[j], copia[i]];
         }
+        // Asi se crea el sorteo tomando los 2 arreglos
         let valido = true;
         let resultados = [];
         for(let i=0; i<participantes.length; i++){
-            let de = participantes[i];
-            let para = copia[i];
+            // Se recorre todo el arreglo viendo de quien a quien se da esa iteracion en el sorteo
+            let de = participantes[i]; // Quien regala
+            let para = copia[i]; // A quien le regala
 
-            // no puede regalarse a sí mismo
+            // no puede regalarse a sí mismo, se abandona el intento
             if(de === para){
                 valido = false;
                 break;
             }
 
             // validar exclusiones
+            // Revisar si quien regala tiene alguna exclusion, 
+            // y si si, revisa si la exclusion esta con quien le va a regalar
             if(exclusiones[de] && exclusiones[de].includes(para)){
                 valido = false;
                 break;
             }
-            resultados.push({de, para});
+            resultados.push({de, para}); // Se guarda el resultado valido
         }
 
+        // Si todo salio bien se retorna el resultado
         if(valido){
             return resultados;
         }
